@@ -116,3 +116,38 @@ Install @nestjs/mapped-types
 ```bash
 $ npm i @nestjs/mapped-types
 ```
+
+## Docker
+
+// Start containers in detached / background mode
+docker-compose up -d
+
+docker-compose up (nombre del servicio. ej: db) -d
+
+// Stop containers
+docker-compose down
+
+## TypeORM
+
+// Install neccessary TypeORM dependencies
+npm install @nestjs/typeorm typeorm pg
+
+## Swagger
+
+To have a visual representation of the API
+
+npm install --save @nestjs/swagger swagger-ui-express
+
+To view the Swagger UI go to:
+http://localhost:3000/api
+
+Add the @nestjs/swagger plugin to our application to nest-cli.json
+
+```json
+ "compilerOptions": {
+  "deleteOutDir": true,
+  "plugins": ["@nestjs/swagger/plugin"] // 👈
+}
+```
+
+Look at create-coffee.dto and update-coffee.dto for examples os schemas
